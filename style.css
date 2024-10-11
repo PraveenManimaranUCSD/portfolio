@@ -1,6 +1,132 @@
+:root {
+  --color-accent: oklch(65% 50% 0); /* Define the accent color */
+}
+
+
 body {
     /* Set line height to 1.5 times the font size
          and use the OS’s UI font as the website font
        */
     font: 100%/1.5 system-ui;
+    max-width: 100ch;
+    margin-inline: auto;
+    padding: 1em;
   }
+
+  nav {
+    display: flex;
+    gap: 1em; 
+    margin-bottom: 2em;         /* Adds space below the nav */
+
+    /* Border-bottom with individual properties */
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: oklch(80% 3% 200); /* Cool gray color */
+
+    /* Adjust padding-bottom to compensate for the border */
+    padding-bottom: 0.1em;
+  }
+
+  nav a {
+    flex: 1;               /* Makes each link take up equal space */
+    text-align: center;     /* Centers the text inside each link */
+    padding: 0.5em;         /* Adds padding for better spacing */
+    text-decoration: none;  /* Removes underline from links */
+    color: inherit;            /* Sets link text color */
+}
+
+.current {
+  font-weight: bold;
+  color: #007bff;             /* Highlight with a different color */
+  
+  /* Thicker bottom border for the current page */
+  border-bottom-width: 0.4em;
+  border-bottom-style: solid;
+  border-bottom-color: oklch(80% 3% 200);   /* Red or slightly lighter color */
+  
+  /* Reduce padding-bottom to compensate for the border */
+  padding-bottom: 0.1em;
+}
+
+/* Hover styles for navigation links */
+nav a:hover {
+  border-bottom-width: 0.4em;          /* Same border width as current link */
+  border-bottom-style: solid;           /* Solid line */
+  border-bottom-color: var(--color-accent); /* Use accent color */
+}
+
+form {
+  display: grid; /* Enable CSS Grid for the form */
+  grid-template-columns: auto 1fr; /* Label column and input column */
+  gap: 1em; /* Adds space between the grid items */
+}
+
+label {
+  display: grid; /* Make label a grid container */
+  grid-template-columns: subgrid; /* Use subgrid to align with form grid */
+  margin-block: 0; /* Remove margin as grid will handle spacing */
+  grid-column: 1 / -1; /* Make the label span across two columns */
+}
+
+input[type="email"],
+input[type="text"],
+textarea {
+  width: 100%; /* Make inputs take the full width of their grid cell */
+  box-sizing: border-box; /* Include padding and border in width */
+  padding: 0.5em; /* Adds padding for better spacing */
+}
+
+button {
+  grid-column: 1 / -1; /* Make button span the full width */
+  padding: 0.7em 1.5em; /* Adds padding to the button */
+  cursor: pointer; /* Changes cursor on hover */
+  background-color: var(--color-accent); /* Use your defined accent color */
+  color: white; /* Sets button text color */
+  border: none; /* Removes default border */
+  border-radius: 5px; /* Rounds the corners of the button */
+}
+
+button:hover {
+  background-color: darken(var(--color-accent), 10%); /* Darken on hover */
+}
+
+.projects {
+  display: grid; /* Makes the element a grid container */
+  grid-template-columns: repeat(auto-fill, minmax(15em, 1fr)); /* Responsive columns */
+  gap: 1.5em; /* Space between grid items */
+}
+
+.projects article {
+  display: grid;             /* Set the article as a grid container */
+  grid-template-rows: subgrid; /* Use subgrid for rows to align with parent grid */
+  grid-row: span 3;         /* Make each article span 3 rows */
+}
+
+.projects article h2 {
+  margin: 0;                /* Remove margin to avoid excessive spacing */
+}
+
+h1 {
+  font-size: 4em;         /* Makes the <h1> significantly larger */
+  line-height: 1.1;       /* Sets a tighter line height */
+  text-wrap: balance;     /* Prevents uneven lines for <h1> */
+}
+
+h2 {
+  line-height: 1.1;       /* Sets line height for <h2> */
+  text-wrap: balance;     /* Prevents uneven lines for <h2> */
+}
+
+/* Apply the same styles to all other heading levels */
+h3, h4, h5, h6 {
+  line-height: 1.1;       /* Sets line height for all headings */
+  text-wrap: balance;     /* Prevents uneven lines for all headings */
+}
+
+.resume {
+  font-family: Arial, sans-serif; /* Font for the resume page */
+  line-height: 1.6; /* Improved readability */
+  margin: 0;
+  padding: 20px; /* Padding around the body */
+  background-color: #f5f5f5; /* Light background color */
+}

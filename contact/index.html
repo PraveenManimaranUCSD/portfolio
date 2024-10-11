@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact</title>
+    <link rel="stylesheet" href="../style.css" />
 </head>
 <body>
     <h1>Contact</h1>
@@ -11,12 +12,12 @@
             <a href="../index.html">Home</a>
             <a href="../projects/index.html">Projects</a>
             <a href="../resume/index.html">Resume</a>
-            <a href="contact/index.html">Contact</a> 
+            <a href="index.html" class="current">Contact</a> 
             <a href="https://github.com/PraveenManimaranUCSD" target="_blank">GitHub</a>
 
     </nav>
 
-    <form action="pravmanimaran@gmail.com" method="POST" enctype="text/plain"></form>
+    <form action="pravmanimaran@gmail.com" method="POST" enctype="text/plain">
         <label for="email">Your Email:</label>
         <input type="email" name="email" id="email" required>
         <br><br>
@@ -29,7 +30,7 @@
         <textarea name="body" id="body" rows="5"></textarea>
         <br><br>
 
-        <button>Submit</button>
+        <button type="submit">Submit</button>
     </form>
 </body>
 </html>
